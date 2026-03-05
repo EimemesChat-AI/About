@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy – EimemesChat AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* same base styles as about.html */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
+    body { background: linear-gradient(135deg, #eef2f7, #e6ecf5, #f7f9fc); color: #111827; line-height: 1.9; overflow-x: hidden; }
+    body::before, body::after { content: ""; position: fixed; width: 500px; height: 500px; border-radius: 50%; filter: blur(120px); z-index: -1; }
+    body::before { background: #c7d2fe; top: -200px; left: -150px; }
+    body::after { background: #e9d5ff; bottom: -200px; right: -150px; }
+    nav { position: fixed; top: 0; width: 100%; padding: 22px 8%; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.05); z-index: 1000; }
+    .logo { font-size: 1.7rem; font-weight: 800; background: linear-gradient(90deg, #2563eb, #7c3aed, #ec4899, #2563eb); background-size: 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: move 8s linear infinite; }
+    @keyframes move { 0% { background-position: 0%; } 100% { background-position: 300%; } }
+    nav ul { list-style: none; display: flex; gap: 30px; }
+    nav ul li a { text-decoration: none; color: #111827; font-weight: 500; transition: color 0.2s; }
+    nav ul li a:hover { color: #2563eb; }
+    .menu-toggle { display: none; cursor: pointer; font-size: 1.5rem; }
+    .page-header { padding-top: 180px; text-align: center; }
+    .page-header h1 { font-size: 3rem; font-weight: 800; }
+    .content { max-width: 800px; margin: 50px auto; padding: 0 20px; }
+    .content h2 { font-size: 1.8rem; margin: 30px 0 15px; }
+    .content p, .content li { color: #374151; margin-bottom: 10px; }
+    .content ul { margin-left: 20px; }
+    footer { background: #f3f4f6; padding: 90px 8%; margin-top: 100px; border-top: 1px solid #e5e7eb; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; }
+    .footer-grid h4 { margin-bottom: 15px; font-weight: 700; }
+    .footer-grid p { color: #4b5563; }
+    .footer-grid a { text-decoration: none; color: #111827; }
+    .footer-grid a:hover { color: #2563eb; }
+    .copyright { margin-top: 50px; text-align: center; color: #6b7280; font-size: .9rem; }
+    @media (max-width: 768px) {
+      nav ul { display: none; flex-direction: column; position: absolute; top: 70px; right: 8%; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 200px; }
+      nav ul.active { display: flex; }
+      .menu-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="logo">EimemesChat AI</div>
+  <div class="menu-toggle" onclick="toggleMenu()"><i class="fa fa-bars"></i></div>
+  <ul id="navMenu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <h1>Privacy Policy</h1>
+</div>
+
+<div class="content">
+  <p><strong>Last updated:</strong> March 2026</p>
+  
+  <h2>1. Introduction</h2>
+  <p>EimemesChat AI ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share your personal information when you use our website and chatbot application.</p>
+  
+  <h2>2. Information We Collect</h2>
+  <p>We collect information you provide directly, such as when you create an account, chat with our AI, or contact us. This may include your name, email address, and the content of your conversations.</p>
+  <p>We also automatically collect certain information when you use our services, including:</p>
+  <ul>
+    <li>Usage data (e.g., features used, time spent)</li>
+    <li>Device information (e.g., IP address, browser type)</li>
+    <li>Cookies and similar tracking technologies</li>
+  </ul>
+  
+  <h2>3. How We Use Your Information</h2>
+  <p>We use the information we collect to:</p>
+  <ul>
+    <li>Provide, maintain, and improve our services</li>
+    <li>Respond to your comments and questions</li>
+    <li>Develop new features and AI models</li>
+    <li>Monitor usage and ensure security</li>
+    <li>Communicate with you about updates or promotional offers (with your consent)</li>
+  </ul>
+  
+  <h2>4. Sharing of Information</h2>
+  <p>We do not sell your personal information. We may share information with third‑party service providers who help us operate our platform (e.g., cloud hosting, analytics). These providers are bound by confidentiality obligations.</p>
+  <p>We may also disclose information if required by law or to protect the rights and safety of our users or the public.</p>
+  
+  <h2>5. Data Security</h2>
+  <p>We implement reasonable security measures to protect your information from unauthorized access, loss, or alteration. However, no method of transmission over the Internet is 100% secure.</p>
+  
+  <h2>6. Your Rights</h2>
+  <p>Depending on your location, you may have the right to access, correct, or delete your personal information. To exercise these rights, please contact us at privacy@eimemeschat.ai.</p>
+  
+  <h2>7. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page with an updated effective date.</p>
+  
+  <h2>8. Contact Us</h2>
+  <p>If you have any questions about this Privacy Policy, please contact us at support@eimemeschat.ai.</p>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div><h4>EimemesChat AI</h4><p>Preserving language is preserving identity.</p></div>
+    <div><h4>Quick Links</h4><p><a href="about.html">About Us</a></p><p><a href="privacy.html">Privacy Policy</a></p><p><a href="terms.html">Terms & Conditions</a></p><p><a href="faq.html">FAQ</a></p></div>
+    <div><h4>Contact</h4><p>Email: support@eimemeschat.ai</p><p>India</p></div>
+    <div><h4>Follow Us</h4><p><a href="#"><i class="fab fa-facebook"></i> Facebook</a></p><p><a href="#"><i class="fab fa-instagram"></i> Instagram</a></p><p><a href="#"><i class="fab fa-twitter"></i> Twitter / X</a></p><p><a href="#"><i class="fab fa-youtube"></i> YouTube</a></p></div>
+  </div>
+  <div class="copyright">© 2026 EimemesChat AI. All rights reserved.</div>
+</footer>
+
+<script>function toggleMenu(){document.getElementById("navMenu").classList.toggle("active");}</script>
+</body>
+</html>
