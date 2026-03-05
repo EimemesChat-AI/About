@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EimemesChat AI – Preserving Kuki Language</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+    body {
+      background: linear-gradient(135deg, #eef2f7, #e6ecf5, #f7f9fc);
+      color: #111827;
+      line-height: 1.9;
+      overflow-x: hidden;
+    }
+
+    /* Background glow */
+    body::before, body::after {
+      content: "";
+      position: fixed;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: -1;
+    }
+    body::before { background: #c7d2fe; top: -200px; left: -150px; }
+    body::after  { background: #e9d5ff; bottom: -200px; right: -150px; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; width: 100%;
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #2563eb, #7c3aed, #ec4899, #2563eb);
+      background-size: 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: move 8s linear infinite;
+    }
+
+    @keyframes move {
+      0% { background-position: 0%; }
+      100% { background-position: 300%; }
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #111827;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav ul li a:hover { color: #2563eb; }
+
+    .menu-toggle { display: none; cursor: pointer; font-size: 1.5rem; }
+
+    /* HERO */
+    .hero {
+      padding-top: 180px;
+      padding-bottom: 140px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      margin-bottom: 25px;
+      line-height: 1.3;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #4b5563;
+      margin-bottom: 40px;
+    }
+
+    .hero button {
+      padding: 16px 40px;
+      border: none;
+      border-radius: 50px;
+      background: #111827;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .hero button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    /* SECTION STYLE */
+    section {
+      padding: 110px 8%;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 2.3rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .section-text {
+      color: #374151;
+      font-size: 1.05rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #f3f4f6;
+      padding: 90px 8%;
+      margin-top: 100px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 50px;
+    }
+
+    .footer-grid h4 { margin-bottom: 15px; font-weight: 700; }
+    .footer-grid p { color: #4b5563; }
+    .footer-grid a { text-decoration: none; color: #111827; }
+    .footer-grid a:hover { color: #2563eb; }
+
+    .copyright {
+      margin-top: 50px;
+      text-align: center;
+      color: #6b7280;
+      font-size: .9rem;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 8%;
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        width: 200px;
+      }
+      nav ul.active { display: flex; }
+      .menu-toggle { display: block; }
+      .hero h1 { font-size: 2.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">EimemesChat AI</div>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <i class="fa fa-bars"></i>
+  </div>
+  <ul id="navMenu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero" id="home">
+  <h1>Preserving the Kuki Language Through Artificial Intelligence</h1>
+  <p>
+    Kuki is not a single tribe — it is a collective identity spanning
+    communities from Aimol to Zou, rich in dialects, history, and tradition.
+    EimemesChat AI is building the first culturally intelligent AI system
+    designed to preserve and digitally empower this diverse linguistic heritage
+    for the future of artificial intelligence.
+  </p>
+  <a href="https://chat-eimemes.vercel.app/" target="_blank" rel="noopener">
+    <button>Try Our Beta Version</button>
+  </a>
+</div>
+
+<section id="overview">
+  <h2 class="section-title">Project Overview</h2>
+  <p class="section-text">
+    EimemesChat AI is a long-term initiative dedicated to building a translation
+    and conversational AI system designed for the broader Kuki linguistic family.
+    Our approach goes beyond literal translation — we focus on semantic depth,
+    cultural alignment, and contextual intelligence.
+    <br><br>
+    The project is expanding to include multiple related languages and dialects
+    such as Paite, Gangte, Vaiphei, and others within the Kuki-Zo community.
+    By building structured bilingual datasets and culturally informed language models,
+    we aim to create an inclusive digital ecosystem that represents the full
+    diversity of our people.
+  </p>
+</section>
+
+<section>
+  <h2 class="section-title">Why Machine Learning Matters Today</h2>
+  <p class="section-text">
+    Machine learning powers search engines, voice assistants, fraud detection,
+    healthcare diagnostics, and modern automation systems. These systems learn
+    patterns from data instead of relying on fixed programming rules.
+    If a language does not exist inside structured datasets, it cannot
+    be represented in these intelligent systems.
+    <br><br>
+    As global AI systems expand, languages without digital representation risk
+    becoming technologically invisible. Representation in artificial intelligence
+    is now a necessity, not a luxury.
+  </p>
+</section>
+
+<section>
+  <h2 class="section-title">Cultural Intelligence in Artificial Intelligence</h2>
+  <p class="section-text">
+    Language carries history, worldview, and identity. EimemesChat AI integrates
+    cultural knowledge such as traditions, oral narratives, and social customs
+    to ensure that AI responses preserve authentic meaning rather than produce
+    literal translations detached from context.
+  </p>
+</section>
+
+<section>
+  <h2 class="section-title">Development Roadmap</h2>
+  <p class="section-text">
+    The roadmap begins with structured sentence collection and translation pairing,
+    followed by experimental model training and validation. Future phases include
+    dialect expansion, speech technology integration, and mobile deployment
+    for broader accessibility across communities.
+  </p>
+</section>
+
+<footer id="contact">
+  <div class="footer-grid">
+    <div>
+      <h4>EimemesChat AI</h4>
+      <p>Preserving language is preserving identity.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <p><a href="about.html">About Us</a></p>
+      <p><a href="privacy.html">Privacy Policy</a></p>
+      <p><a href="terms.html">Terms & Conditions</a></p>
+      <p><a href="faq.html">FAQ</a></p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>Email: support@eimemeschat.ai</p>
+      <p>India</p>
+    </div>
+    <div>
+      <h4>Follow Us</h4>
+      <p><a href="#"><i class="fab fa-facebook"></i> Facebook</a></p>
+      <p><a href="#"><i class="fab fa-instagram"></i> Instagram</a></p>
+      <p><a href="#"><i class="fab fa-twitter"></i> Twitter / X</a></p>
+      <p><a href="#"><i class="fab fa-youtube"></i> YouTube</a></p>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 EimemesChat AI. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("active");
+  }
+</script>
+</body>
+  </html>
